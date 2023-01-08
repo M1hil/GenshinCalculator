@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>     
+            PrimoCalculator
+        </title>
+        <link rel="stylesheet" href="styles.css">
+            <meta charset="UTF-8">
+            <meta name="keywords" content="HTML">
+            <meta name="description" content="PrimoCalculator">
+            <meta name="author" content="Michael Georg Pitsch">
+            <meta http-equiv="refresh" content="60">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    </head>
+    <body>
+        <form action="/action_page.php">
+            <label for="from">1st Date:</label>
+            <input type="date" id="from" name="from">
+            <br>
+            <label for="to">2nd Date:</label>
+            <input type="date" id="to" name="to">
+        </form>
+        <p id="milliseconds"></p>
+        <p id="1st"></p>
+        <p>Daily Commisssions:  <input type="checkbox" id="dailys"          name="dailys"           onclick="checkAddress()"/></p>
+        <p>Livestream Codes:    <input type="checkbox" id="codes"           name="codes"            onclick="checkAddress()"/></p>
+        <p>Compensations:       <input type="checkbox" id="compensations"   name="compensations"    onclick="checkAddress()"/></p>
+        <p>Events:              <input type="checkbox" id="events"          name="events"           onclick="checkAddress()"/></p>
+        <p>Character Trials:    <input type="checkbox" id="trials"          name="trials"           onclick="checkAddress()"/></p>
+        <p>Abyss:               <input type="checkbox" id="abyss"           name="abyss"            onclick="checkAddress()"/></p>
+        <p>Shop reset:          <input type="checkbox" id="shopreset"       name="shopreset"        onclick="checkAddress()"/></p>
+        <p>Battlepass free:     <input type="checkbox" id="battlepassfree"  name="battlepassfree"   onclick="checkAddress()"/></p>
+        <p>Battlepass paied:    <input type="checkbox" id="battlepasspaied" name="battlepasspaied"  onclick="checkAddress()"/></p>
+        <p>Welkin Moon:         <input type="checkbox" id="welkin"          name="welkin"           onclick="checkAddress()"/></p>
+        <p id="primogems"></p>
+        <script>
+            var date1 = new Date();
+            var milsec = date1.getTime();
+            document.getElementById("milliseconds").innerHTML = milsec;
+        </script>
+        <!--<script>
+            document.getElementById("1st").innerHTML = from;
+        </script>-->
+        <script type="text/javascript" src="checkbox.js"></script>
+    </body>
+</html>
