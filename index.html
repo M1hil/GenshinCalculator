@@ -13,13 +13,14 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     </head>
     <body>
-        <form action="/action_page.php">
+        <div onchange="clcdate()">
+            <h1>PrimoCalculator</h1>
             <label for="from">1st Date:</label>
             <input type="date" id="from" name="from">
             <br>
             <label for="to">2nd Date:</label>
             <input type="date" id="to" name="to">
-        </form>
+        </div>
         <p id="milliseconds"></p>
         <p id="1st"></p>
         <p>Daily Commisssions:  <input type="checkbox" id="dailys"          name="dailys"           onclick="checkAddress()"/></p>
@@ -34,9 +35,20 @@
         <p>Welkin Moon:         <input type="checkbox" id="welkin"          name="welkin"           onclick="checkAddress()"/></p>
         <p id="primogems"></p>
         <script>
-            var date1 = new Date();
-            var milsec = date1.getTime();
-            document.getElementById("milliseconds").innerHTML = milsec;
+            function clcdate(){
+                var from = document.getElementById("from").value;
+                var to = document.getElementById("to").value;
+                if(from != "" && to != ""){
+                    var date1 = new Date(from);
+                    var date2 = new Date(to);
+                    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+                    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                    document.getElementById("milliseconds").innerHTML = `Difference in days: ${diffDays}`;
+                }
+                else{
+                    document.getElementById("milliseconds").innerHTML = "Please enter both dates";
+                }
+            }
         </script>
         <!--<script>
             document.getElementById("1st").innerHTML = from;
