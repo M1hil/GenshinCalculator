@@ -10,10 +10,11 @@ function checkAddress()
     var battlepassfree1 = document.getElementById('battlepassfree');
     var battlepasspaied1 = document.getElementById('battlepasspaied');
     var welkin1 = document.getElementById('welkin');
-    let primos = 10;
+    let primos = 0;
     if (dailys1.checked)
     {
-        primos+=60;
+        primos+=60 * diffDays;
+
         console.log("ja");
     }
     if (codes1.checked)
