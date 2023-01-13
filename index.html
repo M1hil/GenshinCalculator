@@ -11,9 +11,10 @@
             <meta name="author" content="Michael Georg Pitsch">
             <meta http-equiv="refresh" content="60">
             <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+            <script type="text/javascript" src="./javascriptfiles.js"></script>
     </head>
     <body>
-        <div onchange="dateDiff()">
+        <div onchange="dateDiff(), setMax ()">
             <h1>PrimoCalculator</h1>
             <label for="from">1st Date:</label>
             <input type="date" id="from" name="from">
@@ -22,8 +23,17 @@
             <input type="date" id="to" name="to">
         </div>
         <p id="daysdiff"></p>
-        <p id="days"></p>
-        <p>Daily Commisssions:  <input type="checkbox" id="dailys"          name="dailys"           onclick="checkAddress()"/></p>
+        <p>Daily Commissions: 
+            <form action="/action_page.php" id="dailys" name="dailys" onclick="checkAddress()" 
+                oninput="out.value=parseInt(mySlider.value)">
+            0
+            <input type="range" id="mySlider" name="mySlider" value="0" min="0" max="0"><span id="days"
+                oninput="document.getElementById('dailys').innerHTML = this.value"></span>
+            =
+            <output name="out" for="mySlider"></output>
+        </form> 
+        </p>
+        <p id="dailys"></p>
         <p>Livestream Codes:    <input type="checkbox" id="codes"           name="codes"            onclick="checkAddress()"/></p>
         <p>Compensations:       <input type="checkbox" id="compensations"   name="compensations"    onclick="checkAddress()"/></p>
         <p>Events:              <input type="checkbox" id="events"          name="events"           onclick="checkAddress()"/></p>
@@ -35,29 +45,27 @@
         <p>Welkin Moon:         <input type="checkbox" id="welkin"          name="welkin"           onclick="checkAddress()"/></p>
         <p id="primogems"></p>
         <script>
-            function clcdate(){
-                var from = document.getElementById("from").value;
-                var to = document.getElementById("to").value;
-                var date1 = new Date(from);
-                var date2 = new Date(to);
-                var timeDiff = date2.getTime() - date1.getTime();
-                var daysDiff = timeDiff / (1000 * 60 * 60 *24)
-                if(daysDiff < 0){
-                    return null;
-                } 
-                else {
-                    return daysDiff;
-                }
-            } 
-        </script>
-        <script>
             function dateDiff(){
                 var daysDiff = clcdate()
                 if(daysDiff){
                     document.getElementById("daysdiff").innerHTML = `Difference in days: ${daysDiff}`; 
+                    document.getElementById("days").innerHTML = daysDiff;
                 } else {
                     document.getElementById("daysdiff").innerHTML = "Please enter valid date";
                 }
+            }   
+        </script>
+        <script>
+            function setMax() {
+                const daysDiff = clcdate()
+                var slider = document.getElementById ("mySlider");
+                if ('max' in slider) {  // Google Chrome, Safari from version 5 and Opera
+                    slider.max = daysDiff;
+                } 
+                else { // Safari before version 5
+                    slider.setAttribute ("max", daysDiff);
+                }
+                dateDiff(slider);
             }
         </script>
         <script type="text/javascript" src="./checkbox.js"></script>

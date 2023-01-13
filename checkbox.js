@@ -1,6 +1,6 @@
 function checkAddress()
 {
-    var dailys1             = document.getElementById('dailys');
+    var dailys1             = document.getElementById('mySlider').value;
     var codes1              = document.getElementById('codes');
     var compensations1      = document.getElementById('compensations');
     var events1             = document.getElementById('events');
@@ -11,9 +11,8 @@ function checkAddress()
     var battlepasspaied1    = document.getElementById('battlepasspaied');
     var welkin1             = document.getElementById('welkin');
     let primos = 0;
-    if (dailys1.checked){
-    var daysDiff = clcdate()
-        primos += 60 * daysDiff;
+    if (dailys1 != 0){    
+        primos += 60 * dailys1;
     }
     if (codes1.checked)
     {
