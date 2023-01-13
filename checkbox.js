@@ -1,6 +1,6 @@
 function checkAddress()
 {
-    var dailys1             = document.getElementById('mySlider').value;
+    var dailys1             = document.getElementById('mydailySlider').value;
     var codes1              = document.getElementById('codes');
     var compensations1      = document.getElementById('compensations');
     var events1             = document.getElementById('events');
@@ -9,9 +9,10 @@ function checkAddress()
     var shopreset1          = document.getElementById('shopreset');
     var battlepassfree1     = document.getElementById('battlepassfree');
     var battlepasspaied1    = document.getElementById('battlepasspaied');
-    var welkin1             = document.getElementById('welkin');
+    var welkin1             = document.getElementById('mywelkinSlider').value;
     let primos = 0;
-    if (dailys1 != 0){    
+    if (dailys1 != 0)
+    {    
         primos += 60 * dailys1;
     }
     if (codes1.checked)
@@ -46,9 +47,9 @@ function checkAddress()
     {
         //..
     }
-    if (welkin1.checked)
+    if (welkin1 != 0)
     {
-        //..
+        primos += 90 * welkin1;
     }
     document.getElementById("primogems").innerHTML = primos;
 }

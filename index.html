@@ -25,13 +25,13 @@
         <p id="daysdiff"></p>
         <p>Daily Commissions: 
             <form action="/action_page.php" id="dailys" name="dailys" onclick="checkAddress()" 
-                oninput="out.value=parseInt(mySlider.value)">
-            0
-            <input type="range" id="mySlider" name="mySlider" value="0" min="0" max="0"><span id="days"
-                oninput="document.getElementById('dailys').innerHTML = this.value"></span>
-            =
-            <output name="out" for="mySlider"></output>
-        </form> 
+                oninput="out.value=parseInt(mydailySlider.value)">
+                0
+                <input type="range" id="mydailySlider" name="mydailySlider" value="0" min="0" max="0">
+                <span id="daysdaily" oninput="document.getElementById('dailys').innerHTML = this.value"></span>
+                =
+                <output name="out" for="mydailySlider"></output>
+            </form> 
         </p>
         <p id="dailys"></p>
         <p>Livestream Codes:    <input type="checkbox" id="codes"           name="codes"            onclick="checkAddress()"/></p>
@@ -42,14 +42,24 @@
         <p>Shop reset:          <input type="checkbox" id="shopreset"       name="shopreset"        onclick="checkAddress()"/></p>
         <p>Battlepass free:     <input type="checkbox" id="battlepassfree"  name="battlepassfree"   onclick="checkAddress()"/></p>
         <p>Battlepass paied:    <input type="checkbox" id="battlepasspaied" name="battlepasspaied"  onclick="checkAddress()"/></p>
-        <p>Welkin Moon:         <input type="checkbox" id="welkin"          name="welkin"           onclick="checkAddress()"/></p>
-        <p id="primogems"></p>
+        <p>Welkin Moon: 
+            <form action="/action_page.php" id="welkin" name="welkin" onclick="checkAddress()" 
+                oninput="out.value=parseInt(mywelkinSlider.value)">
+                0
+                <input type="range" id="mywelkinSlider" name="mywelkinSlider" value="0" min="0" max="0">
+                <span id="dayswelkin" oninput="document.getElementById('welkin').innerHTML = this.value"></span>
+                = 
+                <output name="out" for="mywelkinSlider"></output>
+            </form> 
+        </p>
+        <p><span id="primogems"></span> Primogems</p>
         <script>
             function dateDiff(){
                 var daysDiff = clcdate()
                 if(daysDiff){
                     document.getElementById("daysdiff").innerHTML = `Difference in days: ${daysDiff}`; 
-                    document.getElementById("days").innerHTML = daysDiff;
+                    document.getElementById("daysdaily").innerHTML = daysDiff;
+                    document.getElementById("dayswelkin").innerHTML = daysDiff;
                 } else {
                     document.getElementById("daysdiff").innerHTML = "Please enter valid date";
                 }
@@ -58,14 +68,22 @@
         <script>
             function setMax() {
                 const daysDiff = clcdate()
-                var slider = document.getElementById ("mySlider");
-                if ('max' in slider) {  // Google Chrome, Safari from version 5 and Opera
-                    slider.max = daysDiff;
+                //slider = document.querySelectorAll ('#mydailySlider, #mywelkinSlider');
+                slider1 = document.getElementById ('mydailySlider');
+                slider2 = document.getElementById ('mywelkinSlider');
+                //if ('max' in slider2) {
+                if ('max' in slider1 || 'max' in slider2) {  // Google Chrome, Safari from version 5 and Opera
+                    //slider.max = daysDiff;
+                    slider1.max = daysDiff;
+                    slider2.max = daysDiff;
                 } 
                 else { // Safari before version 5
-                    slider.setAttribute ("max", daysDiff);
+                    //slider.setAttribute ("max", daysDiff);
+                    slider1.setAttribute ("max", daysDiff);
+                    slider2.setAttribute ("max", daysDiff);
                 }
-                dateDiff(slider);
+                dateDiff(slider1);
+                dateDiff(slider2);
             }
         </script>
         <script type="text/javascript" src="./checkbox.js"></script>
