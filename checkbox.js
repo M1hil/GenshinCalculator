@@ -21,7 +21,8 @@ function checkAddress()
     }
     if (compensations1.checked)
     {
-        //..
+        var threeweeks = clcupdate()
+        primos += 300 * threeweeks;
     }
     if (events1.checked)
     {
@@ -29,7 +30,8 @@ function checkAddress()
     }
     if (trials1.checked)
     {
-        //..
+        var threeweeks = clcupdate()
+        primos += 40 * threeweeks;
     }
     if (abyss1.checked)
     {

@@ -9,12 +9,11 @@
             <meta name="keywords" content="HTML">
             <meta name="description" content="PrimoCalculator">
             <meta name="author" content="Michael Georg Pitsch">
-            <meta http-equiv="refresh" content="60">
+            <meta http-equiv="refresh" content="3600">
             <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-            <script type="text/javascript" src="./javascriptfiles.js"></script>
     </head>
     <body>
-        <div onchange="dateDiff(), setMax ()">
+        <div onchange="dateDiff(), setMax (), clcupdate()">
             <h1>PrimoCalculator</h1>
             <label for="from">1st Date:</label>
             <input type="date" id="from" name="from">
@@ -23,15 +22,24 @@
             <input type="date" id="to" name="to">
         </div>
         <p id="daysdiff"></p>
+        <p id="hal1"></p>
+        <p id="hal2"></p>
+        <p id="hal3"></p>
+        <p id="hal4"></p>
+        <p id="hal5"></p>
+        <p id="hal6"></p>
+        <p id="hal7"></p>
+        <p id="hal8"></p>
+        <p id="hal9"></p>
         <p>Daily Commissions: 
-            <form action="/action_page.php" id="dailys" name="dailys" onclick="checkAddress()" 
+            <div id="dailys" name="dailys" onclick="checkAddress()" 
                 oninput="out.value=parseInt(mydailySlider.value)">
                 0
                 <input type="range" id="mydailySlider" name="mydailySlider" value="0" min="0" max="0">
                 <span id="daysdaily" oninput="document.getElementById('dailys').innerHTML = this.value"></span>
                 =
                 <output name="out" for="mydailySlider"></output>
-            </form> 
+        </div> 
         </p>
         <p id="dailys"></p>
         <p>Livestream Codes:    <input type="checkbox" id="codes"           name="codes"            onclick="checkAddress()"/></p>
@@ -43,16 +51,33 @@
         <p>Battlepass free:     <input type="checkbox" id="battlepassfree"  name="battlepassfree"   onclick="checkAddress()"/></p>
         <p>Battlepass paied:    <input type="checkbox" id="battlepasspaied" name="battlepasspaied"  onclick="checkAddress()"/></p>
         <p>Welkin Moon: 
-            <form action="/action_page.php" id="welkin" name="welkin" onclick="checkAddress()" 
+            <div id="welkin" name="welkin" onclick="checkAddress()" 
                 oninput="out.value=parseInt(mywelkinSlider.value)">
                 0
                 <input type="range" id="mywelkinSlider" name="mywelkinSlider" value="0" min="0" max="0">
                 <span id="dayswelkin" oninput="document.getElementById('welkin').innerHTML = this.value"></span>
                 = 
                 <output name="out" for="mywelkinSlider"></output>
-            </form> 
+        </div> 
         </p>
+        <p id="datezeroid"></p>
         <p><span id="primogems"></span> Primogems</p>
+        <script>
+            function clcdate(){
+                var from = document.getElementById("from").value;
+                var to = document.getElementById("to").value;
+                var date1 = new Date(from);
+                var date2 = new Date(to);
+                var timeDiff = date2.getTime() - date1.getTime();
+                var daysDiff = timeDiff / (1000 * 60 * 60 *24)
+                if(daysDiff < 0){
+                    return null;
+                } 
+                else {
+                    return daysDiff;
+                }
+            }
+        </script>
         <script>
             function dateDiff(){
                 var daysDiff = clcdate()
@@ -68,17 +93,13 @@
         <script>
             function setMax() {
                 const daysDiff = clcdate()
-                //slider = document.querySelectorAll ('#mydailySlider, #mywelkinSlider');
                 slider1 = document.getElementById ('mydailySlider');
                 slider2 = document.getElementById ('mywelkinSlider');
-                //if ('max' in slider2) {
                 if ('max' in slider1 || 'max' in slider2) {  // Google Chrome, Safari from version 5 and Opera
-                    //slider.max = daysDiff;
                     slider1.max = daysDiff;
                     slider2.max = daysDiff;
                 } 
                 else { // Safari before version 5
-                    //slider.setAttribute ("max", daysDiff);
                     slider1.setAttribute ("max", daysDiff);
                     slider2.setAttribute ("max", daysDiff);
                 }
@@ -87,5 +108,6 @@
             }
         </script>
         <script type="text/javascript" src="./checkbox.js"></script>
+        <script type="text/javascript" src="./javascriptfiles.js"></script>
     </body>
 </html>
