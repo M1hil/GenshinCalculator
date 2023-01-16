@@ -30,14 +30,50 @@
                 <span id="daysdaily" oninput="document.getElementById('dailys').innerHTML = this.value"></span>
                 =
                 <output name="dailyout" for="mydailySlider"></output>
-            </form> 
+            </form>     
         </p>
         <p id="dailys"></p>
         <p>Livestream Codes:    <input type="checkbox" id="codes"           name="codes"            onclick="checkAddress()"/></p>
         <p>Compensations:       <input type="checkbox" id="compensations"   name="compensations"    onclick="checkAddress()"/></p>
         <p>Events:              <input type="checkbox" id="events"          name="events"           onclick="checkAddress()"/></p>
         <p>Character Trials:    <input type="checkbox" id="trials"          name="trials"           onclick="checkAddress()"/></p>
-        <p>Abyss:               <input type="checkbox" id="abyss"           name="abyss"            onclick="checkAddress()"/></p>
+        <p>Abyss:</p>
+        <p>Floor 9:             
+            <form id="abyssfloor9" name="abyssfloor9" onclick="checkAddress()" 
+                oninput="abyssfloor9out.value=parseInt(myabyssfloor9Slider.value)">
+                0
+                <input type="range" id="myabyssfloor9Slider" name="myabyssfloor9Slider" value="0" min="0" max="9">
+                9 =
+                <output name="abyssfloor9out" for="myabyssfloor9Slider"></output>
+            </form>
+        </p>
+        <p>Floor 10:            
+            <form id="abyssfloor10" name="abyssfloor10" onclick="checkAddress()" 
+                oninput="abyssfloor10out.value=parseInt(myabyssfloor10Slider.value)">
+                0
+                <input type="range" id="myabyssfloor10Slider" name="myabyssfloor10Slider" value="0" min="0" max="9">
+                9 =
+                <output name="abyssfloor10out" for="myabyssfloor10Slider"></output>
+            </form>
+        </p>
+        <p>Floor 11:            
+            <form id="abyssfloor11" name="abyssfloor11" onclick="checkAddress()" 
+                oninput="abyssfloor11out.value=parseInt(myabyssfloor11Slider.value)">
+                0
+                <input type="range" id="myabyssfloor11Slider" name="myabyssfloor11Slider" value="0" min="0" max="9">
+                9 =
+                <output name="abyssfloor11out" for="myabyssfloor11Slider"></output>
+            </form>
+        </p>
+        <p>Floor 12:            
+            <form id="abyssfloor12" name="abyssfloor12" onclick="checkAddress()" 
+                oninput="abyssfloor12out.value=parseInt(myabyssfloor12Slider.value)">
+                0
+                <input type="range" id="myabyssfloor12Slider" name="myabyssfloor12Slider" value="0" min="0" max="9">
+                9 =
+                <output name="abyssfloor12out" for="myabyssfloor12Slider"></output>
+            </form>
+        </p>
         <p>Shop reset:          <input type="checkbox" id="shopreset"       name="shopreset"        onclick="checkAddress()"/></p>
         <p>Battlepass free:     <input type="checkbox" id="battlepassfree"  name="battlepassfree"   onclick="checkAddress()"/></p>
         <p>Battlepass paied:    <input type="checkbox" id="battlepasspaied" name="battlepasspaied"  onclick="checkAddress()"/></p>
@@ -132,6 +168,11 @@
                     }
                 }
             }
+        </script>
+        <script>
+            function clcabyssreset() {
+
+            }       
         </script>
         <script type="text/javascript" src="./checkbox.js"></script>
         <!--<script type="text/javascript" src="./javascriptfiles.js"></script>-->
