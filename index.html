@@ -13,7 +13,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     </head>
     <body>
-        <div onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset()">
+        <div onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset()">
             <h1>PrimoCalculator</h1>
             <label for="from">1st Date:</label>
             <input type="date" id="from" name="from">
@@ -88,6 +88,8 @@
             </form> 
         </p>
         <p><span id="primogems"></span> Primogems</p>
+        <p><span id="intertwinedFates"></span> Intertwined Fates</p>
+        <p><span id="acquaintFates"></span> Acquaint Fates</p>
         <script>
             function clcdate(){
                 var from = document.getElementById("from").value;
@@ -193,6 +195,32 @@
                     days = days + 1;
                 }
                 return abyssresets;
+            }       
+        </script>
+        <script>
+            function clcshopreset() {
+                var from = document.getElementById("from").value;
+                var date1 = new Date(from);
+                var mil1 = date1.getTime();
+                var days1 = mil1 / (1000 * 60 * 60 *24);
+                //bis hier: days1 = days from 0 (19434 etc.)
+                var shopresets = 0;
+                var days = 1;
+                var daysDiff = clcdate()
+                while (days <= daysDiff) {
+                    let daysneu = days1 + days;
+                    var milneu = daysneu * (1000 * 60 * 60 *24);   
+                    var dateneu = new Date(milneu);
+                    let monthdays = dateneu.getDate();  
+                    if (monthdays == 1) {
+                        shopresets += 1;
+                    }
+                    else {
+                        shopresets += 0;
+                    }
+                    days = days + 1;
+                }
+                return shopresets;
             }       
         </script>
         <script type="text/javascript" src="./checkbox.js"></script>

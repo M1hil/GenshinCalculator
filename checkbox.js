@@ -14,6 +14,8 @@ function checkAddress()
     var battlepasspaied1    = document.getElementById('battlepasspaied');
     var welkin1             = document.getElementById('mywelkinSlider').value;
     let primos = 0;
+    let purpleFates = 0;
+    let blueFates = 0;
     if (dailys1 != 0)
     {    
         primos += 60 * dailys1;
@@ -50,7 +52,9 @@ function checkAddress()
     }
     if (shopreset1.checked)
     {
-        //..
+        var onemonth = clcshopreset()
+        purpleFates += 5 * onemonth;
+        blueFates += 5 * onemonth;
     }
     if (battlepassfree1.checked)
     {
@@ -65,4 +69,6 @@ function checkAddress()
         primos += 90 * welkin1;
     }
     document.getElementById("primogems").innerHTML = primos;
+    document.getElementById("intertwinedFates").innerHTML = purpleFates;
+    document.getElementById("acquaintFates").innerHTML = blueFates;
 }
