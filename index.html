@@ -13,7 +13,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     </head>
     <body>
-        <div onchange="dateDiff(), setMax(), clcupdate()">
+        <div onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset()">
             <h1>PrimoCalculator</h1>
             <label for="from">1st Date:</label>
             <input type="date" id="from" name="from">
@@ -138,11 +138,10 @@
                 const datezero = new Date(2022, 11, 7);                         // 7.11.2022 ist Tag 0
                 let milzero = datezero.getTime();
                 let dayszero = Math.ceil(milzero / (1000 * 60 * 60 * 24));      // Tag 0 in Tagen von Anfang
-                var fromneu = document.getElementById("from").value;
-                var dateday1 = new Date(fromneu);                               // 1. Kalender Tag
+                var from = document.getElementById("from").value;
+                var dateday1 = new Date(from);                                  // 1. Kalender Tag
                 let milday1 = dateday1.getTime();
                 let daysday1 = Math.floor(milday1 / (1000 * 60 * 60 * 24));     // 1. Kalender Tag in Tagen von Anfang
-
                 let dateDiff = daysday1 - dayszero;                             // Tage von Tag 0 bis 1. Kalendertag
                 var daysDiff = clcdate()
                 daysleft = dateDiff % 21;                                       // Tage seit 3 Wochen Update
@@ -170,45 +169,30 @@
                 }
             }
         </script>
-        <!--<script>
-            const datezero = new Date(2022, 11, 7);                         // 7.11.2022 ist Tag 0
-            let milzero = datezero.getTime();
-            let dayszero = Math.ceil(milzero / (1000 * 60 * 60 * 24));      // Tag 0 in Tagen von Anfang
-            const datetoday = new Date();                                   // aktueller Tag
-            let miltoday = datetoday.getTime();
-            let daystoday = Math.floor(miltoday / (1000 * 60 * 60 * 24));   // aktueller Tag in Tagen von Anfang
-
-            function clcupdate() {
-                let dateDiff = daystoday - dayszero;                        // Tage von Tag 0 bis heute
-                var daysDiff = clcdate()
-                daysleft = dateDiff % 21;                                   // Tage seit 3 Wochen Update
-                if (daysDiff <=21){
-                    if (daysleft + daysDiff >= 21){
-                        let threeweeks = 1;
-                        return threeweeks;
-                    }
-                    else{
-                        let threeweeks = 0;
-                        return threeweeks;
-                    }
-                }
-                else {
-                    timesover21days = Math.floor(daysDiff / 21);
-                    restover21days =  daysDiff % 21;
-                    if (daysleft + restover21days >= 21){
-                        let threeweeks = 1 + timesover21days;
-                        return threeweeks;
-                    }
-                    else{
-                        let threeweeks = 0 + timesover21days;
-                        return threeweeks;
-                    }
-                }
-            }
-        </script>-->
         <script>
             function clcabyssreset() {
-
+                var from = document.getElementById("from").value;
+                var date1 = new Date(from);
+                var mil1 = date1.getTime();
+                var days1 = mil1 / (1000 * 60 * 60 *24);
+                //bis hier: days1 = days from 0 (19434 etc.)
+                var abyssresets = 0;
+                var days = 1;
+                var daysDiff = clcdate()
+                while (days <= daysDiff) {
+                    let daysneu = days1 + days;
+                    var milneu = daysneu * (1000 * 60 * 60 *24);   
+                    var dateneu = new Date(milneu);
+                    let monthdays = dateneu.getDate();  
+                    if (monthdays == 1 || monthdays == 16) {
+                        abyssresets += 1;
+                    }
+                    else {
+                        abyssresets += 0;
+                    }
+                    days = days + 1;
+                }
+                return abyssresets;
             }       
         </script>
         <script type="text/javascript" src="./checkbox.js"></script>

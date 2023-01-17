@@ -6,9 +6,9 @@ function checkAddress()
     var events1             = document.getElementById('events');
     var trials1             = document.getElementById('trials');
     var abyssfloor9x1       = document.getElementById('myabyssfloor9Slider').value;
-    var abyssfloor10x1      = document.getElementById('myabyssfloor9Slider').value;
-    var abyssfloor11x1      = document.getElementById('myabyssfloor9Slider').value;
-    var abyssfloor12x1      = document.getElementById('myabyssfloor9Slider').value;
+    var abyssfloor10x1      = document.getElementById('myabyssfloor10Slider').value;
+    var abyssfloor11x1      = document.getElementById('myabyssfloor11Slider').value;
+    var abyssfloor12x1      = document.getElementById('myabyssfloor12Slider').value;
     var shopreset1          = document.getElementById('shopreset');
     var battlepassfree1     = document.getElementById('battlepassfree');
     var battlepasspaied1    = document.getElementById('battlepasspaied');
@@ -36,10 +36,18 @@ function checkAddress()
         var threeweeks = clcupdate()
         primos += 40 * threeweeks;
     }
-    //if (abyss1.checked)
-    //{
-        //..
-    //}
+    if (abyssfloor9x1 != 0 || abyssfloor10x1 != 0 || abyssfloor11x1 != 0 || abyssfloor12x1 != 0)
+    {
+        var threestarsfloor9x1  = Math.floor(abyssfloor9x1 / 3);
+        var threestarsfloor10x1 = Math.floor(abyssfloor10x1 / 3);
+        var threestarsfloor11x1 = Math.floor(abyssfloor11x1 / 3);
+        var threestarsfloor12x1 = Math.floor(abyssfloor12x1 / 3);
+        var abyssresets = clcabyssreset();
+        primos += 50 * threestarsfloor9x1  * abyssresets;
+        primos += 50 * threestarsfloor10x1 * abyssresets;
+        primos += 50 * threestarsfloor11x1 * abyssresets;
+        primos += 50 * threestarsfloor12x1 * abyssresets;
+    }
     if (shopreset1.checked)
     {
         //..
