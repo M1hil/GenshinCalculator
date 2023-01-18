@@ -23,7 +23,8 @@ function checkAddress()
     }
     if (codes1.checked)
     {
-        //..
+        var livestreams = clclivestreamcodes()
+        primos += 300 * livestreams;
     }
     if (compensations1.checked)
     {

@@ -13,7 +13,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     </head>
     <body>
-        <div onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset()">
+        <div onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset(), clclivestreamcodes()">
             <h1>PrimoCalculator</h1>
             <label for="from">1st Date:</label>
             <input type="date" id="from" name="from">
@@ -222,6 +222,42 @@
                 }
                 return shopresets;
             }       
+        </script>
+        <script>
+            function clclivestreamcodes() {
+                const datezero = new Date(2022, 10, 26);                         // 26.10.2022 ist Tag 0
+                let milzero = datezero.getTime();
+                let dayszero = Math.ceil(milzero / (1000 * 60 * 60 * 24));      // Tag 0 in Tagen von Anfang
+                var from = document.getElementById("from").value;
+                var dateday1 = new Date(from);                                  // 1. Kalender Tag
+                let milday1 = dateday1.getTime();
+                let daysday1 = Math.floor(milday1 / (1000 * 60 * 60 * 24));     // 1. Kalender Tag in Tagen von Anfang
+                let dateDiff = daysday1 - dayszero;                             // Tage von Tag 0 bis 1. Kalendertag
+                var daysDiff = clcdate()
+                daysleft = dateDiff % 21;                                       // Tage seit 3 Wochen Update
+                if (daysDiff <=21){
+                    if (daysleft + daysDiff >= 21){
+                        let livestreams = 1;
+                        return livestreams;
+                    }
+                    else{
+                        let livestreams = 0;
+                        return livestreams;
+                    }
+                }
+                else {
+                    timesover21days = Math.floor(daysDiff / 21);
+                    restover21days =  daysDiff % 21;
+                    if (daysleft + restover21days >= 21){
+                        let livestreams = 1 + timesover21days;
+                        return livestreams;
+                    }
+                    else{
+                        let livestreams = 0 + timesover21days;
+                        return livestreams;
+                    }
+                }
+            }
         </script>
         <script type="text/javascript" src="./checkbox.js"></script>
         <!--<script type="text/javascript" src="./javascriptfiles.js"></script>-->
