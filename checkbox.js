@@ -13,6 +13,9 @@ function checkAddress()
     var battlepassfree1     = document.getElementById('battlepassfree');
     var battlepasspaied1    = document.getElementById('battlepasspaied');
     var welkin1             = document.getElementById('mywelkinSlider').value;
+    var addprimos1          = document.getElementById('addprimos').value;
+    var addpurplefates1     = document.getElementById('addpurplefates').value;
+    var addbluefates1       = document.getElementById('addbluefates').value;
     var primos = 0;
     var purpleFates = 0;
     var blueFates = 0;
@@ -69,6 +72,18 @@ function checkAddress()
     if (welkin1 != 0)
     {
         primos += 90 * welkin1;
+    }
+    if (addprimos1 != 0)
+    {
+        primos += 1 * addprimos1;
+    }
+    if (addpurplefates != 0)
+    {
+        purpleFates += 1 * addpurplefates1;
+    }
+    if (addbluefates1 != 0)
+    {
+        blueFates += 1 * addbluefates1;
     }
     Fates = Math.floor(primos / 160);
     document.getElementById("primogems").innerHTML = primos;
