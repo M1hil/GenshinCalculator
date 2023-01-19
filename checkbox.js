@@ -36,7 +36,8 @@ function checkAddress()
     }
     if (events1.checked)
     {
-        //..
+        daysDiff = clcdate();
+        primos += 30 * daysDiff;
     }
     if (trials1.checked)
     {
