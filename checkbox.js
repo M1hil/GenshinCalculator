@@ -1,21 +1,23 @@
 function checkAddress()
 {
-    var dailys1             = document.getElementById('mydailySlider').value;
-    var codes1              = document.getElementById('codes');
-    var compensations1      = document.getElementById('compensations');
-    var events1             = document.getElementById('events');
-    var trials1             = document.getElementById('trials');
-    var abyssfloor9x1       = document.getElementById('myabyssfloor9Slider').value;
-    var abyssfloor10x1      = document.getElementById('myabyssfloor10Slider').value;
-    var abyssfloor11x1      = document.getElementById('myabyssfloor11Slider').value;
-    var abyssfloor12x1      = document.getElementById('myabyssfloor12Slider').value;
-    var shopreset1          = document.getElementById('shopreset');
-    var battlepassfree1     = document.getElementById('battlepassfree');
-    var battlepasspaied1    = document.getElementById('battlepasspaied');
-    var welkin1             = document.getElementById('mywelkinSlider').value;
-    var addprimos1          = document.getElementById('addprimos').value;
-    var addpurplefates1     = document.getElementById('addpurplefates').value;
-    var addbluefates1       = document.getElementById('addbluefates').value;
+    var dailys1                     = document.getElementById('mydailySlider').value;
+    var codes1                      = document.getElementById('codes');
+    var compensations1              = document.getElementById('compensations');
+    var events1                     = document.getElementById('events');
+    var trials1                     = document.getElementById('trials');
+    var abyssfloor9x1               = document.getElementById('myabyssfloor9Slider').value;
+    var abyssfloor10x1              = document.getElementById('myabyssfloor10Slider').value;
+    var abyssfloor11x1              = document.getElementById('myabyssfloor11Slider').value;
+    var abyssfloor12x1              = document.getElementById('myabyssfloor12Slider').value;
+    var shopreset1                  = document.getElementById('shopreset');
+    var battlepassfree1             = document.getElementById('battlepassfree');
+    var battlepasspaied1            = document.getElementById('battlepasspaied');
+    var battlepassbluefates1        = document.getElementById('battlepassbluefates').value;
+    var battlepasspurplefates1      = document.getElementById('battlepasspurplefates').value;
+    var welkin1                     = document.getElementById('mywelkinSlider').value;
+    var addprimos1                  = document.getElementById('addprimos').value;
+    var addpurplefates1             = document.getElementById('addpurplefates').value;
+    var addbluefates1               = document.getElementById('addbluefates').value;
     var primos = 0;
     var purpleFates = 0;
     var blueFates = 0;
@@ -64,11 +66,21 @@ function checkAddress()
     }
     if (battlepassfree1.checked)
     {
-        //..
+        var versionupdate = clcversionupdate();
+        blueFates += 1 * battlepassbluefates1 * versionupdate;
+        console.log(battlepassbluefates1);
+        console.log();
     }
     if (battlepasspaied1.checked)
     {
-        //..
+        var versionupdate = clcversionupdate();
+        if (battlepasspurplefates1 == 5){
+            purpleFates += 1 * (battlepasspurplefates1 - 1) * versionupdate;
+            primos += 680;
+        }
+        else{
+        purpleFates += 1 * battlepasspurplefates1 * versionupdate;
+        }
     }
     if (welkin1 != 0)
     {

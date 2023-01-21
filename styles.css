@@ -1,3 +1,11 @@
 body {
     background-color: rgb(179, 140, 12);
 }
+
+.hide {
+    display: none;
+}
+
+.unhide {
+    display: block;
+}
