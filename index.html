@@ -17,7 +17,7 @@
         <table>
             <tr>
                 <th>Methode</th>
-                <th>Wie viel</th>
+                <th colspan="4">Wie viel</th>
                 <th>Info etc.</th>
             </tr>
             <tr>
@@ -25,17 +25,18 @@
                     <label for="from">1st Date:</label>
                     <input type="date" id="from" name="from">
                 </td>
-                <td>
-                    <p id="daysdiff"></p>
-                </td>
-                <td onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset(), clclivestreamcodes(), clcversionupdate()">
+                <td colspan="4" onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset(), clclivestreamcodes(), clcversionupdate()">
                     <label for="to">2nd Date:</label>
                     <input type="date" id="to" name="to">
                 </td>
+                <td>
+                    <p id="daysdiff"></p>
+                </td>
+                
             </tr>
             <tr>
                 <td>Daily Commissions:</td>
-                <td>
+                <td colspan="4">
                     <form id="dailys" name="dailys" onclick="checkAddress()" 
                         oninput="dailyout.value=parseInt(mydailySlider.value)">
                         0
@@ -50,17 +51,17 @@
             </tr>
             <tr>
                 <td>Livestream Codes:</td>
-                <td><input type="checkbox" id="codes" name="codes" onclick="checkAddress()"/></td>
+                <td colspan="4"><input type="checkbox" id="codes" name="codes" onclick="checkAddress()"/></td>
                 <td></td>
             </tr>
             <tr>
                 <td>Compensations:</td>
-                <td><input type="checkbox" id="compensations" name="compensations" onclick="checkAddress()"/></td>
+                <td colspan="4"><input type="checkbox" id="compensations" name="compensations" onclick="checkAddress()"/></td>
                 <td></td>
             </tr>
             <tr>
                 <td>Events:</td>
-                <td><input type="checkbox" id="events" name="events" onclick="checkAddress()"/></td>
+                <td colspan="4"><input type="checkbox" id="events" name="events" onclick="checkAddress()"/></td>
                 <td>
                     <i>Note: You will probably get more than 30 Primogems per day through Events (counter = 30 Primogems * Days); 
                         be aware, that the accuracy will decline for fewer time differences between the 2 dates.</i>
@@ -68,7 +69,7 @@
             </tr>
             <tr>
                 <td>Character Trials:</td>
-                <td><input type="checkbox" id="trials" name="trials" onclick="checkAddress()"/></td>
+                <td colspan="4"><input type="checkbox" id="trials" name="trials" onclick="checkAddress()"/></td>
                 <td></td>
             </tr>
             <tr>
@@ -93,9 +94,6 @@
                         <output name="abyssfloor10out" for="myabyssfloor10Slider"></output>
                     </form>
                 </td>
-            </tr>
-            <tr>
-                <td></td>
                 <td>
                     Floor 11:            
                     <form id="abyssfloor11" name="abyssfloor11" onclick="checkAddress()" 
@@ -116,37 +114,32 @@
                         <output name="abyssfloor12out" for="myabyssfloor12Slider"></output>
                     </form>
                 </td>
+                <td></td>
             </tr>
             <tr>
                 <td>Shop reset:</td>
-                <td><input type="checkbox" id="shopreset" name="shopreset" onclick="checkAddress()"/></td>
+                <td colspan="4"><input type="checkbox" id="shopreset" name="shopreset" onclick="checkAddress()"/></td>
                 <td></td>
             </tr>
             <tr>
                 <td>Battlepass free:</td>
-                <td>
+                <td colspan="4">
                     <input type="checkbox" id="battlepassfree" name="battlepassfree" onclick="checkAddress()"/>
                     <input type="number" id="battlepassbluefates" name="battlepassbluefates" min="0" max="5"> 
                 </td>
-                <td>
-                    <div class="info" onclick="show(this)">i</div> 
-                    <i id="infoid" class="hide">Please enter the Battlepasslevel you can reach in average / 10 (example: level 43 will be 4)</i>
-                </td>
+                <td><i>Please enter the Battlepasslevel you can reach in average / 10 (example: level 43 will be 4)</i></td>
             </tr>
             <tr>
                 <td>Battlepass paied:</td>
-                <td>
+                <td colspan="4">
                     <input type="checkbox" id="battlepasspaied" name="battlepasspaied" onclick="checkAddress()"/>
                         <input type="number" id="battlepasspurplefates" name="battlepasspurplefates" min="0" max="5">
                 </td>
-                <td>
-                    <div class="info" onclick="show(this)">i</div> 
-                    <i id="infoid" class="hide">Please enter the Battlepasslevel you can reach in average / 10 (example: level 43 will be 4)</i>
-                </td>
+                <td></td>
             </tr>
             <tr>
                 <td>Welkin Moon:</td>
-                <td>
+                <td colspan="4">
                     <form id="welkin" name="welkin" onclick="checkAddress()" 
                         oninput="welkinout.value=parseInt(mywelkinSlider.value)">
                         0
@@ -160,23 +153,24 @@
             </tr>
             <tr>
                 <td>Additional Primogems:</td>
-                <td><input type="number" id="addprimos" name="additionalprimos" min="0" max="99999"></td>
+                <td colspan="4"><input type="number" id="addprimos" name="additionalprimos" min="0" max="99999"></td>
                 <td></td>
             </tr>
             <tr>
                 <td>Additional Intertwined Fates:</td>
-                <td><input type="number" id="addpurplefates" name="additionalpurplefates" min="0" max="999"></td>
+                <td colspan="4"><input type="number" id="addpurplefates" name="additionalpurplefates" min="0" max="999"></td>
                 <td></td>
             </tr>
             <tr>
                 <td>Additional Acquaint Fates:</td>
-                <td><input type="number" id="addbluefates" name="additionalbluefates" min="0" max="999"></td>
+                <td colspan="4"><input type="number" id="addbluefates" name="additionalbluefates" min="0" max="999"></td>
                 <td></td>
             </tr>
             <tr>
                 <td><span id="primogems"></span> Primogems = <span id="umgewandelteFates"></span> Fates</td>
                 <td><span id="intertwinedFates"></span> Intertwined Fates</td>
-                <td><span id="acquaintFates"></span> Acquaint Fates</td>
+                <td colspan="3"><span id="acquaintFates"></span> Acquaint Fates</td>
+                <td></td>
             </tr>
           </table>
 
@@ -227,7 +221,7 @@
         </script>
         <script>
             function clcupdate() {
-                const datezero = new Date(2022, 11, 7);                         // 7.11.2022 ist Tag 0
+                const datezero = new Date(2022, 11, 6);                         // 7.11.2022 ist Tag 0
                 let milzero = datezero.getTime();
                 let dayszero = Math.ceil(milzero / (1000 * 60 * 60 * 24));      // Tag 0 in Tagen von Anfang
                 var from = document.getElementById("from").value;
@@ -386,7 +380,7 @@
             }
         </script>
         <script>
-            function show(indoid) {
+            function show() {
                 var className = infoid.getAttribute("class");
                 if (className == "hide") {
                     infoid.className = "unhide"
@@ -400,3 +394,6 @@
         <!--<script type="text/javascript" src="./javascriptfiles.js"></script>-->
     </body>
 </html>
+
+
+<!--function show() warum nicht show(infoid) / nichts ???-->
