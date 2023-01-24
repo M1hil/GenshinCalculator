@@ -12,93 +12,190 @@
             <meta http-equiv="refresh" content="3600">
             <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     </head>
+    <h1>PrimoCalculator</h1>
     <body>
-        <div onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset(), clclivestreamcodes(), clcversionupdate()">
-            <h1>PrimoCalculator</h1>
-            <label for="from">1st Date:</label>
-            <input type="date" id="from" name="from">
-            <br>
-            <label for="to">2nd Date:</label>
-            <input type="date" id="to" name="to">
+        <div class="grid-container">
+            <div class="grid-item" onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset(), clclivestreamcodes(), clcversionupdate()">
+                <label for="from">1st Date:</label>
+                <input type="date" id="from" name="from">
+                <br>
+            </div>
+            <div class="grid-item">
+                <p id="daysdiff"></p>   
+            </div>
+            <div class="grid-item" onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset(), clclivestreamcodes(), clcversionupdate()">
+                <label for="to">2nd Date:</label>
+                <input type="date" id="to" name="to">
+            </div>
+            <div class="grid-item">
+                <p>Daily Commissions:</p>
+            </div>
+            <div class="grid-item">
+                <form id="dailys" name="dailys" onclick="checkAddress()" 
+                    oninput="dailyout.value=parseInt(mydailySlider.value)">
+                    0
+                    <input type="range" id="mydailySlider" name="mydailySlider" value="0" min="0" max="0">
+                    <span id="daysdaily" oninput="document.getElementById('dailys').innerHTML = this.value"></span>
+                    =
+                    <output name="dailyout" for="mydailySlider"></output>
+                </form> 
+                <p id="dailys"></p>    
+            </div>
+            <div class="grid-item">     </div>
+            <div class="grid-item">
+                <p>Livestream Codes:</p>
+            </div>
+            <div class="grid-item">
+                <input type="checkbox" id="codes" name="codes" onclick="checkAddress()"/>
+            </div>
+            <div class="grid-item">     </div>
+            <div class="grid-item">
+                <p>Compensations:</p>
+            </div>
+            <div class="grid-item">
+                <input type="checkbox" id="compensations" name="compensations" onclick="checkAddress()"/>
+            </div>
+            <div class="grid-item">     </div>
+            <div class="grid-item">
+                <p>Events:</p>
+            </div>
+            <div class="grid-item">
+                <input type="checkbox" id="events" name="events" onclick="checkAddress()"/>
+            </div>
+            <div class="grid-item">
+                <i>Note: You will probably get more than 30 Primogems per day through Events (counter = 30 Primogems * Days); 
+                    be aware, that the accuracy will decline for fewer time differences between the 2 dates.</i>
+            </div>
+            <div class="grid-item">
+                <p>Character Trials:</p>
+            </div>
+            <div class="grid-item">
+                <input type="checkbox" id="trials" name="trials" onclick="checkAddress()"/>
+            </div>
+            <div class="grid-item">     </div>
+            <div class="grid-item">
+                <p>Abyss:</p>
+            </div>
+            <div class="grid-item">
+                <p>Floor 9:             
+                    <form id="abyssfloor9" name="abyssfloor9" onclick="checkAddress()" 
+                        oninput="abyssfloor9out.value=parseInt(myabyssfloor9Slider.value)">
+                        0
+                        <input type="range" id="myabyssfloor9Slider" name="myabyssfloor9Slider" value="0" min="0" max="9">
+                        9 =
+                        <output name="abyssfloor9out" for="myabyssfloor9Slider"></output>
+                    </form>
+                </p>
+            </div>
+            <div class="grid-item">
+                <p>Floor 10:            
+                    <form id="abyssfloor10" name="abyssfloor10" onclick="checkAddress()" 
+                        oninput="abyssfloor10out.value=parseInt(myabyssfloor10Slider.value)">
+                        0
+                        <input type="range" id="myabyssfloor10Slider" name="myabyssfloor10Slider" value="0" min="0" max="9">
+                        9 =
+                        <output name="abyssfloor10out" for="myabyssfloor10Slider"></output>
+                    </form>
+                </p>
+            </div>
+            <div class="grid-item">     </div>
+            <div class="grid-item">
+                <p>Floor 11:            
+                    <form id="abyssfloor11" name="abyssfloor11" onclick="checkAddress()" 
+                        oninput="abyssfloor11out.value=parseInt(myabyssfloor11Slider.value)">
+                        0
+                        <input type="range" id="myabyssfloor11Slider" name="myabyssfloor11Slider" value="0" min="0" max="9">
+                        9 =
+                        <output name="abyssfloor11out" for="myabyssfloor11Slider"></output>
+                    </form>
+                </p>
+            </div>
+            <div class="grid-item">
+                <p>Floor 12:            
+                    <form id="abyssfloor12" name="abyssfloor12" onclick="checkAddress()" 
+                        oninput="abyssfloor12out.value=parseInt(myabyssfloor12Slider.value)">
+                        0
+                        <input type="range" id="myabyssfloor12Slider" name="myabyssfloor12Slider" value="0" min="0" max="9">
+                        9 =
+                        <output name="abyssfloor12out" for="myabyssfloor12Slider"></output>
+                    </form>
+                </p>
+            </div>
+            <div class="grid-item">
+                <p>Shop reset:</p>
+            </div>
+            <div class="grid-item">
+                <input type="checkbox" id="shopreset" name="shopreset" onclick="checkAddress()"/>
+            </div>
+            <div class="grid-item">     </div>
+            <div class="grid-item">
+                <p>Battlepass free:</p>
+            </div>
+            <div class="grid-item">
+                <input type="checkbox" id="battlepassfree" name="battlepassfree" onclick="checkAddress()"/>
+                <input type="number" id="battlepassbluefates" name="battlepassbluefates" min="0" max="5"> 
+            </div>
+            <div class="grid-item">
+                <div class="info" onclick="show(this)">i</div> 
+                <i id="infoid" class="hide">Please enter the Battlepasslevel you can reach in average / 10 (example: level 43 will be 4)</i>
+            </div>
+            <div class="grid-item">
+                <p>Battlepass paied:</p>
+            </div>
+            <div class="grid-item">
+                <input type="checkbox" id="battlepasspaied" name="battlepasspaied" onclick="checkAddress()"/>
+                    <input type="number" id="battlepasspurplefates" name="battlepasspurplefates" min="0" max="5">
+            </div>
+            <div class="grid-item">
+                <div class="info" onclick="show(this)">i</div> 
+                <i id="infoid" class="hide">Please enter the Battlepasslevel you can reach in average / 10 (example: level 43 will be 4)</i>
+            </div>
+            <div class="grid-item">
+                <p>Welkin Moon:</p>
+            </div>
+            <div class="grid-item">
+                <form id="welkin" name="welkin" onclick="checkAddress()" 
+                    oninput="welkinout.value=parseInt(mywelkinSlider.value)">
+                    0
+                    <input type="range" id="mywelkinSlider" name="mywelkinSlider" value="0" min="0" max="0">
+                    <span id="dayswelkin" oninput="document.getElementById('welkin').innerHTML = this.value"></span>
+                    = 
+                    <output name="welkinout" for="mywelkinSlider"></output>
+                </form>
+            </div>
+            <div class="grid-item">     </div>
+            <div class="grid-item">
+                <p>Additional Primogems:</p>
+            </div>
+            <div class="grid-item">
+                <input type="number" id="addprimos" name="additionalprimos" min="0" max="99999">
+            </div>
+            <div class="grid-item">     </div>
+            <div class="grid-item">
+                <p>Additional Intertwined Fates:</p>
+            </div>
+            <div class="grid-item">
+                <input type="number" id="addpurplefates" name="additionalpurplefates" min="0" max="999">
+            </div>
+            <div class="grid-item">     </div>
+            <div class="grid-item">
+                <p>Additional Acquaint Fates:
+            </div>
+            <div class="grid-item">
+                <input type="number" id="addbluefates" name="additionalbluefates" min="0" max="999"></p>
+            </div>
+            <div class="grid-item">     </div>
+            <div class="grid-item">
+                <p><span id="primogems"></span> Primogems = <span id="umgewandelteFates"></span> Fates</p>
+            </div>
+            <div class="grid-item">
+                <p><span id="intertwinedFates"></span> Intertwined Fates</p>
+            </div>
+            <div class="grid-item">
+                <p><span id="acquaintFates"></span> Acquaint Fates</p></div>
         </div>
-        <p id="daysdiff"></p>
-        <p>Daily Commissions: 
-            <form id="dailys" name="dailys" onclick="checkAddress()" 
-                oninput="dailyout.value=parseInt(mydailySlider.value)">
-                0
-                <input type="range" id="mydailySlider" name="mydailySlider" value="0" min="0" max="0">
-                <span id="daysdaily" oninput="document.getElementById('dailys').innerHTML = this.value"></span>
-                =
-                <output name="dailyout" for="mydailySlider"></output>
-            </form>     
-        </p>
-        <p id="dailys"></p>
-        <p>Livestream Codes:    <input type="checkbox" id="codes"           name="codes"            onclick="checkAddress()"/></p>
-        <p>Compensations:       <input type="checkbox" id="compensations"   name="compensations"    onclick="checkAddress()"/></p>
-        <p>Events:              <input type="checkbox" id="events"          name="events"           onclick="checkAddress()"/>
-            <i>Note: You will probably get more than 30 Primogems per day through Events (counter = 30 Primogems * Days); 
-                be aware, that the accuracy will decline for fewer time differences between the 2 dates.</i>
-        </p>
-        <p>Character Trials:    <input type="checkbox" id="trials"          name="trials"           onclick="checkAddress()"/></p>
-        <p>Abyss:</p>
-        <p>Floor 9:             
-            <form id="abyssfloor9" name="abyssfloor9" onclick="checkAddress()" 
-                oninput="abyssfloor9out.value=parseInt(myabyssfloor9Slider.value)">
-                0
-                <input type="range" id="myabyssfloor9Slider" name="myabyssfloor9Slider" value="0" min="0" max="9">
-                9 =
-                <output name="abyssfloor9out" for="myabyssfloor9Slider"></output>
-            </form>
-        </p>
-        <p>Floor 10:            
-            <form id="abyssfloor10" name="abyssfloor10" onclick="checkAddress()" 
-                oninput="abyssfloor10out.value=parseInt(myabyssfloor10Slider.value)">
-                0
-                <input type="range" id="myabyssfloor10Slider" name="myabyssfloor10Slider" value="0" min="0" max="9">
-                9 =
-                <output name="abyssfloor10out" for="myabyssfloor10Slider"></output>
-            </form>
-        </p>
-        <p>Floor 11:            
-            <form id="abyssfloor11" name="abyssfloor11" onclick="checkAddress()" 
-                oninput="abyssfloor11out.value=parseInt(myabyssfloor11Slider.value)">
-                0
-                <input type="range" id="myabyssfloor11Slider" name="myabyssfloor11Slider" value="0" min="0" max="9">
-                9 =
-                <output name="abyssfloor11out" for="myabyssfloor11Slider"></output>
-            </form>
-        </p>
-        <p>Floor 12:            
-            <form id="abyssfloor12" name="abyssfloor12" onclick="checkAddress()" 
-                oninput="abyssfloor12out.value=parseInt(myabyssfloor12Slider.value)">
-                0
-                <input type="range" id="myabyssfloor12Slider" name="myabyssfloor12Slider" value="0" min="0" max="9">
-                9 =
-                <output name="abyssfloor12out" for="myabyssfloor12Slider"></output>
-            </form>
-        </p>
-        <p>Shop reset:          <input type="checkbox" id="shopreset"               name="shopreset"                onclick="checkAddress()"/></p>
-        <p>Battlepass free:     <input type="checkbox" id="battlepassfree"          name="battlepassfree"           onclick="checkAddress()"/>
-                                <input type="number"   id="battlepassbluefates"     name="battlepassbluefates"      min="0" max="5"> 
-                                    <div class="info" onclick="show(this)">i</div> <i id="infoid" class="hide">Please enter the Battlepasslevel you can reach in average / 10 (example: level 43 will be 4)</i></p></p>
-        <p>Battlepass paied:    <input type="checkbox" id="battlepasspaied"         name="battlepasspaied"          onclick="checkAddress()"/>
-                                <input type="number"   id="battlepasspurplefates"   name="battlepasspurplefates"    min="0" max="5">
-        <p>Welkin Moon: 
-            <form id="welkin" name="welkin" onclick="checkAddress()" 
-                oninput="welkinout.value=parseInt(mywelkinSlider.value)">
-                0
-                <input type="range" id="mywelkinSlider" name="mywelkinSlider" value="0" min="0" max="0">
-                <span id="dayswelkin" oninput="document.getElementById('welkin').innerHTML = this.value"></span>
-                = 
-                <output name="welkinout" for="mywelkinSlider"></output>
-            </form> 
-        </p>
-        <p>Additional Primogems:        <input type="number" id="addprimos"      name="additionalprimos"      min="0" max="99999"></p>
-        <p>Additional Intertwined Fates:<input type="number" id="addpurplefates" name="additionalpurplefates" min="0" max="999"></p>
-        <p>Additional Acquaint Fates:   <input type="number" id="addbluefates"   name="additionalbluefates"   min="0" max="999"></p>
-        <p><span id="primogems"></span> Primogems = <span id="umgewandelteFates"></span> Fates</p>
-        <p><span id="intertwinedFates"></span> Intertwined Fates</p>
-        <p><span id="acquaintFates"></span> Acquaint Fates</p>
+        
+
         <script>
             function clcdate(){
                 var from = document.getElementById("from").value;
