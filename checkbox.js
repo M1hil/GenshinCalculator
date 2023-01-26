@@ -68,8 +68,6 @@ function checkAddress()
     {
         var versionupdate = clcversionupdate();
         blueFates += 1 * battlepassbluefates1 * versionupdate;
-        console.log(battlepassbluefates1);
-        console.log();
     }
     if (battlepasspaied1.checked)
     {
