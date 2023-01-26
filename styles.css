@@ -35,3 +35,19 @@ th, td {
     margin: 4px;
 }
 
+.calendar {
+    background-color: transparent;
+    border: 1px solid rgb(214, 214, 214);
+    border-radius: 3px;
+    color: rgb(214, 214, 214);
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

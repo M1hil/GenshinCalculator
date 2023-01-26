@@ -10,10 +10,8 @@ function checkAddress()
     var abyssfloor11x1              = document.getElementById('myabyssfloor11Slider').value;
     var abyssfloor12x1              = document.getElementById('myabyssfloor12Slider').value;
     var shopreset1                  = document.getElementById('shopreset');
-    var battlepassfree1             = document.getElementById('battlepassfree');
-    var battlepasspaied1            = document.getElementById('battlepasspaied');
-    var battlepassbluefates1        = document.getElementById('battlepassbluefates').value;
-    var battlepasspurplefates1      = document.getElementById('battlepasspurplefates').value;
+    var battlepassfree1             = document.getElementById('battlepassfree').value;
+    var battlepasspaied1            = document.getElementById('battlepasspaied').value;
     var welkin1                     = document.getElementById('mywelkinSlider').value;
     var addprimos1                  = document.getElementById('addprimos').value;
     var addpurplefates1             = document.getElementById('addpurplefates').value;
@@ -64,16 +62,16 @@ function checkAddress()
         purpleFates += 5 * onemonth;
         blueFates += 5 * onemonth;
     }
-    if (battlepassfree1.checked)
+    if (battlepassfree1 != 0)
     {
         var versionupdate = clcversionupdate();
-        blueFates += 1 * battlepassbluefates1 * versionupdate;
+        blueFates += 1 * battlepassfree1 * versionupdate;
     }
-    if (battlepasspaied1.checked)
+    if (battlepasspaied1 != 0)
     {
         var versionupdate = clcversionupdate();
-        if (battlepasspurplefates1 == 5){
-            purpleFates += 1 * (battlepasspurplefates1 - 1) * versionupdate;
+        if (battlepassfree1 == 5){
+            purpleFates += 1 * (battlepassfree1 - 1) * versionupdate;
             primos += 680;
         }
         else{
