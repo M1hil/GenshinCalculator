@@ -1,5 +1,6 @@
 body {
-    background-color: rgb(179, 140, 12);
+    background-color: #25284b;
+    color: rgb(214, 214, 214);
 }
 
 .hide {
@@ -10,17 +11,27 @@ body {
     display: block;
 }
 
-table {
-    border: 4px solid black;
-    border-radius: 5px;
+table, th, td {
+    padding: 10px;
+}
+table { 
+    background-color: #25284b;
 }
 
-th {
-    border: 2px solid black;
-    border-radius: 5px;
+th, td {
+    background-color: #2d325a;
+    border: 5px solid #25284b;
+    border-radius: 10px;
+    border-collapse: collapse;
+
+}
+.ipt-group, .opt-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-td {
-    border: 1px solid black;
-    border-radius: 5px;
+.ipt-group input {
+    margin: 4px;
 }
+

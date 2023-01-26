@@ -14,25 +14,18 @@
     </head>
     <h1>PrimoCalculator</h1>
     <body>
+        <div onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset(), clclivestreamcodes(), clcversionupdate()">
+            <label for="from">1st Date:</label>
+            <input type="date" id="from" name="from">
+        <div colspan="4" onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset(), clclivestreamcodes(), clcversionupdate()">
+            <label for="to">2nd Date:</label>
+            <input type="date" id="to" name="to">
+            <p id="daysdiff"></p>
         <table>
             <tr>
                 <th>Methode</th>
                 <th colspan="4">Wie viel</th>
                 <th>Info etc.</th>
-            </tr>
-            <tr>
-                <td onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset(), clclivestreamcodes(), clcversionupdate()">
-                    <label for="from">1st Date:</label>
-                    <input type="date" id="from" name="from">
-                </td>
-                <td colspan="4" onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset(), clclivestreamcodes(), clcversionupdate()">
-                    <label for="to">2nd Date:</label>
-                    <input type="date" id="to" name="to">
-                </td>
-                <td>
-                    <p id="daysdiff"></p>
-                </td>
-                
             </tr>
             <tr>
                 <td>Daily Commissions:</td>
@@ -63,7 +56,7 @@
                 <td>Events:</td>
                 <td colspan="4"><input type="checkbox" id="events" name="events" onclick="checkAddress()"/></td>
                 <td>
-                    <i>Note: You will probably get more than 30 Primogems per day through Events (counter = 30 Primogems * Days); 
+                    <i>Note: You will probably get more than 58 Primogems per day through Events (counter = 58 Primogems * Days); 
                         be aware, that the accuracy will decline for fewer time differences between the 2 dates.</i>
                 </td>
             </tr>
@@ -78,40 +71,64 @@
                     Floor 9:             
                     <form id="abyssfloor9" name="abyssfloor9" onclick="checkAddress()" 
                         oninput="abyssfloor9out.value=parseInt(myabyssfloor9Slider.value)">
-                        0
-                        <input type="range" id="myabyssfloor9Slider" name="myabyssfloor9Slider" value="0" min="0" max="9">
-                        9 =
-                        <output name="abyssfloor9out" for="myabyssfloor9Slider"></output>
+                        <div class="ipt-group">
+                            0
+                            <input type="range" id="myabyssfloor9Slider" name="myabyssfloor9Slider" value="0" min="0" max="9">
+                            9
+                        </div>
+                        <div class="opt-group">
+                            =
+                            <span style="width: 5px;"></span>
+                            <output name="abyssfloor9out" for="myabyssfloor9Slider"></output>
+                        </div>
                     </form>
                 </td>
                 <td>
                     Floor 10:            
                     <form id="abyssfloor10" name="abyssfloor10" onclick="checkAddress()" 
                         oninput="abyssfloor10out.value=parseInt(myabyssfloor10Slider.value)">
+                        <div class="ipt-group">
                         0
                         <input type="range" id="myabyssfloor10Slider" name="myabyssfloor10Slider" value="0" min="0" max="9">
-                        9 =
+                        9
+                    </div>
+                    <div class="opt-group">
+                        =
+                        <span style="width: 5px;"></span>
                         <output name="abyssfloor10out" for="myabyssfloor10Slider"></output>
+                    </div>
                     </form>
                 </td>
                 <td>
                     Floor 11:            
                     <form id="abyssfloor11" name="abyssfloor11" onclick="checkAddress()" 
                         oninput="abyssfloor11out.value=parseInt(myabyssfloor11Slider.value)">
-                        0
-                        <input type="range" id="myabyssfloor11Slider" name="myabyssfloor11Slider" value="0" min="0" max="9">
-                        9 =
-                        <output name="abyssfloor11out" for="myabyssfloor11Slider"></output>
+                        <div class="ipt-group">
+                            0
+                            <input type="range" id="myabyssfloor11Slider" name="myabyssfloor11Slider" value="0" min="0" max="9">
+                            9
+                        </div>
+                        <div class="opt-group">
+                            =
+                            <span style="width: 5px;"></span>
+                            <output name="abyssfloor11out" for="myabyssfloor11Slider"></output>
+                        </div>
                     </form>
                 </td>
                 <td>
                     Floor 12:            
                     <form id="abyssfloor12" name="abyssfloor12" onclick="checkAddress()" 
                         oninput="abyssfloor12out.value=parseInt(myabyssfloor12Slider.value)">
-                        0
-                        <input type="range" id="myabyssfloor12Slider" name="myabyssfloor12Slider" value="0" min="0" max="9">
-                        9 =
-                        <output name="abyssfloor12out" for="myabyssfloor12Slider"></output>
+                        <div class="ipt-group">
+                            0
+                            <input type="range" id="myabyssfloor12Slider" name="myabyssfloor12Slider" value="0" min="0" max="9">
+                            9
+                        </div>
+                        <div class="opt-group">
+                            =
+                            <span style="width: 5px;"></span>
+                            <output name="abyssfloor12out" for="myabyssfloor12Slider"></output>
+                        </div>
                     </form>
                 </td>
                 <td></td>
