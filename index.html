@@ -26,7 +26,8 @@
         <table>
             <tr>
                 <th>Methode</th>
-                <th colspan="4">Wie viel</th>
+                <th colspan="4">Quantity</th>
+                <th>Amount</th>
                 <th>Info etc.</th>
             </tr>
             <tr>
@@ -46,6 +47,7 @@
                         </form> 
                     <p id="dailys"></p> 
                 </td>
+                <td><div class="middle"><span id="dailys3"></span><span style="width: 5px;"></span> Primogems</div></td>
                 <td></td>
             </tr>
             <tr>
@@ -53,6 +55,7 @@
                 <td colspan="4">
                     <div class="middle"><input type="checkbox" id="codes" name="codes" onclick="checkAddress()"/></div>
                 </td>
+                <td><div class="middle"><span id="codes3"></span><span style="width: 5px;"></span> Primogems</div></td>
                 <td></td>
             </tr>
             <tr>
@@ -60,6 +63,7 @@
                 <td colspan="4">
                     <div class="middle"><input type="checkbox" id="compensations" name="compensations" onclick="checkAddress()"/></div>
                 </td>
+                <td><div class="middle"><span id="compensations3"></span><span style="width: 5px;"></span> Primogems</div></td>
                 <td></td>
             </tr>
             <tr>
@@ -67,6 +71,7 @@
                 <td colspan="4">
                     <div class="middle"><input type="checkbox" id="events" name="events" onclick="checkAddress()"/></div>
                 </td>
+                <td><div class="middle"><span id="events3"></span><span style="width: 5px;"></span> Primogems</div></td>
                 <td>
                     <i>Note: You will probably get more than 58 Primogems per day through Events (counter = 58 Primogems * Days); 
                         be aware, that the accuracy will decline for fewer time differences between the 2 dates.</i>
@@ -77,6 +82,7 @@
                 <td colspan="4">
                     <div class="middle"><input type="checkbox" id="trials" name="trials" onclick="checkAddress()"/></div>
                 </td>
+                <td><div class="middle"><span id="trials3"></span><span style="width: 5px;"></span> Primogems</div></td>
                 <td></td>
             </tr>
             <tr>
@@ -145,6 +151,7 @@
                         </div>
                     </form>
                 </td>
+                <td><div class="middle"><span id="abyssfloor3"></span><span style="width: 5px;"></span> Primogems</div></td>
                 <td></td>
             </tr>
             <tr>
@@ -152,6 +159,7 @@
                 <td colspan="4">
                     <div class="middle"><input type="checkbox" id="shopreset" name="shopreset" onclick="checkAddress()"/></div>
                 </td>
+                <td><div class="middle"><span id="shopreset3"></span><span style="width: 5px;"></span> Primogems</div></td>
                 <td></td>
             </tr>
             <tr>
@@ -159,6 +167,7 @@
                 <td colspan="4">
                     <div class="middle"><input type="number" id="battlepassfree" name="battlepassfree" min="0" max="5" value="0"> </div>
                 </td>
+                <td><div class="middle"><span id="battlepassfree3"></span><span style="width: 5px;"></span> Primogems</div></td>
                 <td><i>Please enter the Battlepasslevel you can reach in average / 10 (example: level 43 will be 4)</i></td>
             </tr>
             <tr>
@@ -166,6 +175,7 @@
                 <td colspan="4">
                     <div class="middle"><input type="number" id="battlepasspaied" name="battlepasspaied" min="0" max="5" value="0"></div>
                 </td>
+                <td><div class="middle"><span id="battlepasspaied3"></span><span style="width: 5px;"></span> Primogems</div></td>
                 <td></td>
             </tr>
             <tr>
@@ -184,6 +194,7 @@
                         </div>
                     </form>
                 </td>
+                <td><div class="middle"><span id="welkin3"></span><span style="width: 5px;"></span> Primogems</div></td>
                 <td></td>
             </tr>
             <tr>
@@ -192,12 +203,14 @@
                     <div class="middle"><input type="number" id="addprimos" name="additionalprimos" min="0" max="99999" value="0"></div>
                 </td>
                 <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Additional Intertwined Fates:</td>
                 <td colspan="4">
                     <div class="middle"><input type="number" id="addpurplefates" name="additionalpurplefates" min="0" max="999" value="0"></div>
                 </td>
+                <td></td>
                 <td></td>
             </tr>
             <tr>
@@ -206,6 +219,7 @@
                     <div class="middle"><input type="number" id="addbluefates" name="additionalbluefates" min="0" max="999" value="0"></div>
                 </td>
                 <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Results:</td>
@@ -213,6 +227,7 @@
                 <td><div class="middle"><span id="primogems" ></span><span style="width: 5px;"></span> Primogems <span style="width: 5px;"></span>= <span style="width: 5px;"></span><span id="umgewandelteFates"></span><span style="width: 5px;"></span> Fates</div></td>
                 <td><div class="middle"><span id="intertwinedFates"></span><span style="width: 5px;"></span> Intertwined Fates</div></td>
                 <td><div class="middle"><span id="acquaintFates"></span><span style="width: 5px;"></span> Acquaint Fates</div></td>
+                <td></td>
                 <td></td>
                 <td></td>
             </tr>
