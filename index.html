@@ -14,16 +14,19 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
             <link rel="icon" type="image/x-ion" href="/favicon2.ico">
     </head>
-    <h1>PrimoCalculator</h1>
+    <h1 class="middle">PrimoCalculator</h1>
     <body>
-        <div onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset(), clclivestreamcodes(), clcversionupdate()">
-            <label for="from">1st Date:</label>
-            <input type="date" id="from" name="from" class="calendar">
-        <div colspan="4" onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset(), clclivestreamcodes(), clcversionupdate()">
-            <label for="to">2nd Date:</label>
-            <input type="date" id="to" name="to" class="calendar">
-            <p id="daysdiff"></p>
         <table>
+            <tr>
+                <td colspan="2"><div class="middle">Please Insert 2 Dates</div></td>
+                <td colspan="2"><div class="middle" onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset(), clclivestreamcodes(), clcversionupdate()">
+                    <label for="from">1st Date:</label>
+                    <input type="date" id="from" name="from" class="calendar"></td>
+                <td colspan="2"><div class="middle" colspan="4" onchange="dateDiff(), setMax(), clcupdate(), clcabyssreset(), clcshopreset(), clclivestreamcodes(), clcversionupdate()">
+                    <label for="to">2nd Date:</label>
+                    <input type="date" id="to" name="to" class="calendar"></td>
+                <td><div id="daysdiff" class="custommargin middle"></div></td>
+            </tr>
             <tr>
                 <th>Methode</th>
                 <th colspan="4">Quantity</th>
@@ -167,7 +170,7 @@
                 <td colspan="4">
                     <div class="middle"><input type="number" id="battlepassfree" name="battlepassfree" min="0" max="5" value="0"> </div>
                 </td>
-                <td><div class="middle"><span id="battlepassfree3"></span><span style="width: 5px;"></span> Primogems</div></td>
+                <td><div class="middle"><span id="battlepassfree3"></span><span style="width: 5px;"></span> Fates</div></td>
                 <td><i>Please enter the Battlepasslevel you can reach in average / 10 (example: level 43 will be 4)</i></td>
             </tr>
             <tr>
@@ -226,8 +229,8 @@
                 <div class="middle">
                 <td><div class="middle"><span id="primogems" ></span><span style="width: 5px;"></span> Primogems <span style="width: 5px;"></span>= <span style="width: 5px;"></span><span id="umgewandelteFates"></span><span style="width: 5px;"></span> Fates</div></td>
                 <td><div class="middle"><span id="intertwinedFates"></span><span style="width: 5px;"></span> Intertwined Fates</div></td>
-                <td><div class="middle"><span id="acquaintFates"></span><span style="width: 5px;"></span> Acquaint Fates</div></td>
-                <td></td>
+                <td class="customborder"><div class="middle"><span id="allintertwinedFates"></span><span style="width: 5px;"></span> Intertwined Fates</div></td>
+                <td class="customborder"><div class="middle"><span id="acquaintFates"></span><span style="width: 5px;"></span> Acquaint Fates</div></td>
                 <td></td>
                 <td></td>
             </tr>

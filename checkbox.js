@@ -43,9 +43,9 @@ function checkAddress()
     }
     if (compensations1.checked)
     {
-        var threeweeks = clcupdate()
-        primos += 300 * threeweeks;
-        compensations2 += 300 * threeweeks;
+        var versionupdate = clcversionupdate()
+        primos += 300 * versionupdate;
+        compensations2 += 300 * versionupdate;
     }
     if (events1.checked)
     {
@@ -95,7 +95,7 @@ function checkAddress()
             battlepasspaied2 += 680;
         }
         else{
-        purpleFates += 1 * battlepasspurplefates1 * versionupdate;
+        purpleFates += 1 * battlepassfree1 * versionupdate;
         }
     }
     if (welkin1 != 0)
@@ -131,4 +131,6 @@ function checkAddress()
     document.getElementById("intertwinedFates").innerHTML = purpleFates;
     document.getElementById("acquaintFates").innerHTML = blueFates;
     document.getElementById("umgewandelteFates").innerHTML = Fates;
+
+    document.getElementById("allintertwinedFates").innerHTML = purpleFates + Fates;
 }

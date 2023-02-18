@@ -3,6 +3,14 @@ body {
     color: rgb(214, 214, 214);
 }
 
+.customborder {
+    border: solid red 1px;
+}
+
+.custommargin {
+    margin: 0px;
+}
+
 .hide {
     display: none;
 }
