@@ -44,8 +44,8 @@ function checkAddress()
     if (compensations1.checked)
     {
         var versionupdate = clcversionupdate()
-        primos += 300 * versionupdate;
-        compensations2 += 300 * versionupdate;
+        primos += 600 * versionupdate;
+        compensations2 += 600 * versionupdate;
     }
     if (events1.checked)
     {
